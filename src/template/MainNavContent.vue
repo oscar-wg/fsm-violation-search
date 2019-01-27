@@ -17,7 +17,6 @@ export default {
     scrollActiveItemIntoView () {
       this.$nextTick().then(() => {
         const activeEl = this.$el.querySelector('.router-link-exact-active')
-        console.log(activeEl)
         if (activeEl) {
           activeEl.scrollIntoView({
             behavior: 'smooth'

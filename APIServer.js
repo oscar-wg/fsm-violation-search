@@ -22,9 +22,7 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
     guilty: null,
     jerkys: []
   }
-  console.log('try ' + category + ' ' + plateNumber + ':' + vin)
   let reqCall = function (options, succ) {
-    console.log(options.url)
     request.cookie(sessionCookie)
     request(options, function (error, response, body) {
       if (error) {
@@ -73,7 +71,6 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
   }
   let step2 = function (responseBody, statusCode) {
     sessionCookie = cookies.getCookieString(page2)
-    console.log(sessionCookie)
     let VIEWSTATE = responseBody('input#__VIEWSTATE').val()
     let EVENTVALIDATION = responseBody('input#__EVENTVALIDATION').val()
 
