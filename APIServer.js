@@ -260,7 +260,7 @@ let jerkyExplorerApi = function (req, resp) {
 
 app.get('/api/jerkySearch', jerkyExplorerApi)
 
-let server = app.listen(8082, 'localhost', function () {
+let server = app.listen(9002, 'localhost', function () {
    let host = server.address().address
    let port = server.address().port
    console.log("iJeryAPI Server listening at %s:%s", host, port)

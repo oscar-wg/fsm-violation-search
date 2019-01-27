@@ -97,7 +97,7 @@ export default {
   mixins: [validationMixin],
   data: () => ({
     // apiDomain: 'http://localhost:8082',
-    apiDomain: '/iJerkyApi',
+    apiDomain: '/api',
     form: {
       plateNumber: null,
       vin: null,
@@ -154,7 +154,7 @@ export default {
 
       let vm = this
 
-      this.$http.get(this.apiDomain + '/api/jerkySearch?plate_number=' + this.form.plateNumber + '&vin=' + this.form.vin + '&category=' + this.form.category)
+      this.$http.get(this.apiDomain + '/jerkySearch?plate_number=' + this.form.plateNumber + '&vin=' + this.form.vin + '&category=' + this.form.category)
         .then(function (response) {
           vm.jerkys = response.data.result.jerkys
           if (vm.jerkys.length > 0) {
