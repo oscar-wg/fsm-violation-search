@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 612 792">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#EF4F4F;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#36568C;}
+]]>
+</style>
+<rect x="1" y="84.4" class="st2" width="611.7" height="613.1"/>
+<rect x="71.6" y="134.9" class="st0" width="460.5" height="110.8"/>
+<rect x="0" y="0" class="first-square" width="0" height="0"/>
+<rect x="0" y="0" class="last-square" width="0" height="0"/>
+<g>
+	<rect x="71.6" y="476.6" class="st1" width="460.5" height="19.9"/>
+	<rect x="71.6" y="512.4" class="st1" width="460.5" height="19.9"/>
+	<rect x="71.6" y="549.5" class="st1" width="460.5" height="19.9"/>
+	<rect x="71.6" y="585.4" class="st1" width="460.5" height="19.9"/>
+	<rect x="71.6" y="621.2" class="st1" width="460.5" height="19.9"/>
+</g>
+<g>
+	<rect x="71.6" y="293.4" class="st1" width="211" height="57.1"/>
+	<rect x="313.1" y="293.4" class="st1" width="219" height="57.1"/>
+	<rect x="71.6" y="377.7" class="st1" width="132.7" height="57.1"/>
+	<rect x="408.7" y="377.7" class="st1" width="123.4" height="57.1"/>
+	<rect x="237.5" y="377.7" class="st1" width="140.8" height="57.1"/>
+</g>
+</svg>
