@@ -1,17 +1,17 @@
 export const routes = [
   {
-    path: '/index',
+    path: '/iJerky/index',
     name: 'search',
     page: 'Search.vue'
   },
   {
-    path: '/about',
+    path: '/iJerky/about',
     name: 'about',
     page: 'About.vue'
   },
   {
     path: '*',
-    redirect: '/index'
+    redirect: '/iJerky/index'
   }
 ]
 export const mapRoutes = () => {

@@ -255,7 +255,7 @@ let jerkyExplorerApi = function (req, resp) {
   }
 }
 
-app.get('/api/jerkySearch', jerkyExplorerApi)
+app.get('/iJerky/api/jerkySearch', jerkyExplorerApi)
 
 let server = app.listen(9002, 'localhost', function () {
    let host = server.address().address
