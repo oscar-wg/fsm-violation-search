@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/iJerky/api': {
         target: 'http://localhost:9002/api',  // 接口域名
         changeOrigin: true,  //是否跨域
         pathRewrite: {
-          '^/api': ''   //需要rewrite重写的,
+          '^/iJerky/api': ''   //需要rewrite重写的,
         }
       }
     },

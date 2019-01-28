@@ -96,8 +96,8 @@ export default {
   name: 'Search',
   mixins: [validationMixin],
   data: () => ({
-    // apiDomain: 'http://localhost:8082',
-    apiDomain: '/api',
+    // apiDomain: 'http://localhost:9002',
+    apiDomain: '/iJerky/api',
     form: {
       plateNumber: null,
       vin: null,
