@@ -22,7 +22,7 @@
               <div class="md-layout-item md-small-size-100">
                 <md-field :class="getValidationClass('vin')">
                   <label for="vin">汽車識別代碼</label>
-                  <md-input name="vin" id="vin" autocomplete="family-name" v-model="form.vin" :disabled="sending" maxlength="4" md-counter="false"/>
+                  <md-input type="number" name="vin" id="vin" autocomplete="family-name" v-model="form.vin" :disabled="sending" maxlength="4" md-counter="false"/>
                   <span class="md-error" v-if="!$v.form.vin.required">VIN is required</span>
                   <span class="md-error" v-else-if="!$v.form.vin.minlength || !$v.form.vin.maxlength">Invalid length</span>
                 </md-field>
