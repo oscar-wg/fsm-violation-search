@@ -1,7 +1,7 @@
 <template>
   <div class="main-nav-content">
-    <router-link to="/index">{{ $t('pages.search.title') }}</router-link>
-    <router-link to="/about">{{ $t('pages.about.title') }}</router-link>
+    <router-link to="/iJerky/index">{{ $t('pages.search.title') }}</router-link>
+    <router-link to="/iJerky/about">{{ $t('pages.about.title') }}</router-link>
   </div>
 </template>
 

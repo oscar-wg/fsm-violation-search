@@ -2,7 +2,7 @@
   <footer class="main-footer">
     <div class="main-footer-container">
       <div class="main-footer-section">
-        <router-link to="/about">{{ $t('aboutMaterial') }}</router-link>
+        <router-link to="/iJerky/about">{{ $t('aboutMaterial') }}</router-link>
       </div>
       <div class="main-footer-section">
         <a href="https://github.com/oscar-wg" target="_blank">{{ $t('madeWith') }} <span class="red" alt="fun">☺</span> {{ $t('by') }} Oscar</a>

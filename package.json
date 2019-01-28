@@ -10,7 +10,8 @@
     "startapi": "node APIServer.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "prod": "npm run build && node server/app.js"
+    "prod": "npm run build && node server/app.js",
+    "server": "node server/app.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

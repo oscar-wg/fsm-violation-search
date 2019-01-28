@@ -2,7 +2,7 @@
   <md-toolbar class="main-header md-elevation-2" :md-elevation="2">
     <div class="md-toolbar-row">
       <div class="md-toolbar-section-start">
-        <md-button class="md-icon-button logo" @click="to('index')">
+        <md-button class="md-icon-button logo" @click="to('/iJerky/index')">
           <logo-vue-material :animated="isHome" />
         </md-button>
         <md-button class="md-icon-button menu" @click="showMenu">

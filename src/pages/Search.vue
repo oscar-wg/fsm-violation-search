@@ -62,7 +62,7 @@
                 <div class="md-subhead">控訴書編號: {{ j.accusation_no }}</div>
               </md-card-header-text>
               <md-card-media>
-                <img src="/static/qrcode.jpg" alt="qrcode">
+                <img :src="qrCodePath" alt="qrcode">
               </md-card-media>
             </md-card-header>
 
@@ -97,7 +97,7 @@ export default {
   mixins: [validationMixin],
   data: () => ({
     // apiDomain: 'http://localhost:9002',
-    apiDomain: '/iJerky/api',
+    apiDomain: '/api/iJerky',
     form: {
       plateNumber: null,
       vin: null,
@@ -178,6 +178,11 @@ export default {
       if (!this.$v.$invalid) {
         this.search()
       }
+    }
+  },
+  computed: {
+    qrCodePath () {
+      return require('../../static/qrcode.jpg')
     }
   }
 }

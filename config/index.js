@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/iJerky/api': {
-        target: 'http://localhost:9002/api',  // 接口域名
+      '/api/iJerky': {
+        target: 'http://localhost:9002/api/iJerky',  // 接口域名
         changeOrigin: true,  //是否跨域
         pathRewrite: {
-          '^/iJerky/api': ''   //需要rewrite重写的,
+          '^/api/iJerky': ''   //需要rewrite重写的,
         }
       }
     },
@@ -57,7 +57,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/iJerky/',
 
     /**
      * Source Maps

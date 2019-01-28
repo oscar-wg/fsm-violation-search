@@ -1,5 +1,5 @@
 <template>
-  <md-svg-loader class="logo-vue-material" :class="{ blending }" md-src="/static/iJerky-logo.svg" @md-loaded="svgLoaded" />
+  <md-svg-loader class="logo-vue-material" :class="{ blending }" :md-src="iJerkyLogoPath" @md-loaded="svgLoaded" />
 </template>
 
 <style lang="scss">
@@ -107,6 +107,11 @@ export default {
           lastSquare.setAttribute('transform', 'translate(0 0)')
         }, 10)
       }
+    }
+  },
+  computed: {
+    iJerkyLogoPath () {
+      return require('../../static/iJerky-logo.svg')
     }
   }
 }
