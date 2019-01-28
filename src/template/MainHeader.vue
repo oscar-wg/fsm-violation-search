@@ -2,7 +2,7 @@
   <md-toolbar class="main-header md-elevation-2" :md-elevation="2">
     <div class="md-toolbar-row">
       <div class="md-toolbar-section-start">
-        <md-button to="/index" class="md-icon-button logo">
+        <md-button class="md-icon-button logo" @click="to('index')">
           <logo-vue-material :animated="isHome" />
         </md-button>
         <md-button class="md-icon-button menu" @click="showMenu">
@@ -42,7 +42,10 @@ export default {
   methods: {
     ...mapMutations({
       showMenu: types.SHOW_MENU
-    })
+    }),
+    to (path) {
+      this.$router.push({ path: path })
+    }
   }
 }
 </script>
