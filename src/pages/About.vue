@@ -15,7 +15,7 @@
       <div class="md-layout md-gutter md-alignment-top-left">
 
         <div class="md-layout-item md-xsmall-size-100">
-          <md-card class="md-primary" md-theme="nuxt" md-with-hover @click.native="openLink('https://github.com/oscar-wg')">
+          <md-card class="md-primary" md-theme="nuxt" md-with-hover @click.native="openLink('https://github.com/Oscar-Wg/fsm-violation-search')">
             <md-ripple>
               <md-card-header>
                 <md-card-header-text>
@@ -40,7 +40,7 @@
             <md-ripple>
               <md-card-header>
                 <md-card-header-text>
-                  <div class="md-title">Oscar</div>
+                  <div class="md-title">Oscar Wong</div>
                   <div class="md-subhead">Macau Developer</div>
                 </md-card-header-text>
 
@@ -50,7 +50,7 @@
               </md-card-header>
 
               <md-card-content>
-                A creative programmer, always keep learning and try something to make life better.
+                A creative programmer, keep learning and try something new to make life better.
               </md-card-content>
             </md-ripple>
           </md-card>
