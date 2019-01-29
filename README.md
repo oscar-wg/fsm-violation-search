@@ -45,9 +45,9 @@ To run frontend
 npm run dev
 ```
 
-Then browser localhost:9002 if run successful.
+Then browser localhost:9001 if run successful.
 
 ## Credits and Thanks
 
 * Thanks to the <a href="https://github.com/vuematerial/vue-material" target="_blank">Vue-Material</a> author for providing such a good UI.
-* Thanks to the <a href="https://www.fsm.gov.mo/webticket/default.aspx" target="_blank">FSM</a> of government for providing a wonderful crawling channel.
+* Thanks to the <a href="https://www.fsm.gov.mo/webticket/default.aspx" target="_blank">FSM</a> of macau government for providing a wonderful crawling channel.
