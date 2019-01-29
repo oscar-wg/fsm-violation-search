@@ -8,7 +8,10 @@
         </div>
         <div class="home-call">
           <h1 class="home-name">iJerky</h1>
-          <p>澳門交通違例查詢 APP</p>
+          <span class="md-body-1">
+            澳門交通違例查詢 APP，利用爬蟲技術實現<br>
+            實時罰款資料查詢。
+          </span>
         </div>
       </header>
 

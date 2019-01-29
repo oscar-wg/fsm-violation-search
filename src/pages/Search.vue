@@ -4,54 +4,60 @@
       <form novalidate class="md-layout" @submit.prevent="validateForm">
         <div class="md-layout-item md-size-25 md-small-hide">
         </div>
-        <md-card class="md-layout-item md-size-50 md-small-size-100">
-          <md-card-header>
-            <div class="md-title">查詢</div>
-          </md-card-header>
-          <md-card-content>
-            <div class="md-layout md-gutter">
-              <div class="md-layout-item md-small-size-100">
-                <md-field :class="getValidationClass('plateNumber')">
-                  <label for="plate-number">車牌號碼</label>
-                  <md-input name="plate-number" id="plate-number" autocomplete="given-name" v-model="form.plateNumber" :disabled="sending" />
-                  <span class="md-error" v-if="!$v.form.plateNumber.required">Plate number is required</span>
-                  <span class="md-error" v-else-if="!$v.form.plateNumber.minlength || !$v.form.plateNumber.maxlength">Invalid length</span>
-                </md-field>
+        <div class="md-layout-item md-size-50 md-small-size-100">
+          <span class="md-caption">
+            *查詢資料從澳門交通局網站即時獲取<br>
+            *本站純粹學術研究，不會保存任何資料
+          </span>
+          <md-card>
+            <md-card-header>
+              <div class="md-title">查詢</div>
+            </md-card-header>
+            <md-card-content>
+              <div class="md-layout md-gutter">
+                <div class="md-layout-item md-small-size-100">
+                  <md-field :class="getValidationClass('plateNumber')">
+                    <label for="plate-number">車牌號碼</label>
+                    <md-input pattern="[A-Za-z0-9]*" name="plate-number" id="plate-number" autocomplete="given-name" v-model="form.plateNumber" :disabled="sending" />
+                    <span class="md-error" v-if="!$v.form.plateNumber.required">Plate number is required</span>
+                    <span class="md-error" v-else-if="!$v.form.plateNumber.minlength || !$v.form.plateNumber.maxlength">Invalid length</span>
+                  </md-field>
+                </div>
+
+                <div class="md-layout-item md-small-size-100">
+                  <md-field :class="getValidationClass('vin')">
+                    <label for="vin">汽車識別代碼</label>
+                    <md-input type="text" pattern="[0-9]*" data-numeric-input name="vin" id="vin" v-model="form.vin" :disabled="sending" :maxlength="4"/>
+                    <span class="md-error" v-if="!$v.form.vin.required">VIN is required</span>
+                    <span class="md-error" v-else-if="!$v.form.vin.minlength || !$v.form.vin.maxlength">Invalid length</span>
+                  </md-field>
+                </div>
               </div>
 
-              <div class="md-layout-item md-small-size-100">
-                <md-field :class="getValidationClass('vin')">
-                  <label for="vin">汽車識別代碼</label>
-                  <md-input type="number" name="vin" id="vin" autocomplete="family-name" v-model="form.vin" :disabled="sending" maxlength="4" md-counter="false"/>
-                  <span class="md-error" v-if="!$v.form.vin.required">VIN is required</span>
-                  <span class="md-error" v-else-if="!$v.form.vin.minlength || !$v.form.vin.maxlength">Invalid length</span>
-                </md-field>
+              <div class="md-layout md-gutter">
+                <div class="md-layout-item md-small-size-100">
+                  <md-field :class="getValidationClass('category')">
+                    <label for="category">車輛類型</label>
+                    <md-select name="category" id="category" v-model="form.category" md-dense :disabled="sending">
+                      <md-option value="C">摩托車</md-option>
+                      <md-option value="L">汽車</md-option>
+                    </md-select>
+                    <span class="md-error">Category is required</span>
+                  </md-field>
+                </div>
               </div>
-            </div>
+            </md-card-content>
 
-            <div class="md-layout md-gutter">
-              <div class="md-layout-item md-small-size-100">
-                <md-field :class="getValidationClass('category')">
-                  <label for="category">車輛類型</label>
-                  <md-select name="category" id="category" v-model="form.category" md-dense :disabled="sending">
-                    <md-option value="C">摩托車</md-option>
-                    <md-option value="L">汽車</md-option>
-                  </md-select>
-                  <span class="md-error">Category is required</span>
-                </md-field>
-              </div>
-            </div>
-          </md-card-content>
+            <md-progress-bar md-mode="indeterminate" v-if="sending" />
 
-          <md-progress-bar md-mode="indeterminate" v-if="sending" />
+            <md-card-actions>
+              <md-button type="button" class="md-primary" v-if="jerkys.length > 0" @click="openLink('https://www.fsm.gov.mo/webticket/tq_c.aspx')">前往交局網站</md-button>
+              <md-button type="submit" class="md-primary" :disabled="sending">查詢</md-button>
+            </md-card-actions>
+          </md-card>
 
-          <md-card-actions>
-            <md-button type="button" class="md-primary" v-if="jerkys.length > 0" @click="openLink('https://www.fsm.gov.mo/webticket/tq_c.aspx')">前往交局網站</md-button>
-            <md-button type="submit" class="md-primary" :disabled="sending">查詢</md-button>
-          </md-card-actions>
-        </md-card>
-
-        <md-snackbar :md-active.sync="result.notify">{{ result.msg }}</md-snackbar>
+          <md-snackbar :md-active.sync="result.notify">{{ result.msg }}</md-snackbar>
+        </div>
       </form>
       <div class="md-layout jerky-result">
         <template v-for="(j, index) in jerkys">
@@ -120,7 +126,7 @@ export default {
       vin: {
         required,
         minLength: minLength(4),
-        maxLength: minLength(4)
+        maxLength: maxLength(4)
       },
       category: {
         required
@@ -156,17 +162,20 @@ export default {
 
       this.$http.get(this.apiDomain + '/jerkySearch?plate_number=' + this.form.plateNumber + '&vin=' + this.form.vin + '&category=' + this.form.category)
         .then(function (response) {
-          vm.jerkys = response.data.result.jerkys
-          if (vm.jerkys.length > 0) {
-            vm.result.msg = '你有' + vm.jerkys.length + '張未繳費牛肉乾!'
+          if (response.data.status === false || response.data.result.crawlerStatus === false) {
+            vm.result.msg = response.data.result.msg
           } else {
-            vm.result.msg = '恭喜你! 目前找不到未繳費的牛肉乾~'
+            vm.jerkys = response.data.result.jerkys
+            if (vm.jerkys.length > 0) {
+              vm.result.msg = '你有' + vm.jerkys.length + '張未繳費牛肉乾!'
+            } else {
+              vm.result.msg = '恭喜你! 目前找不到未繳費的牛肉乾~'
+            }
           }
           vm.result.notify = true
         })
         .catch(function (error) {
-          console.log(error)
-          vm.result.msg = error.response.data.msg
+          vm.result.msg = error.response.statusText
           vm.result.notify = true
         })
         .finally(function (resp) {

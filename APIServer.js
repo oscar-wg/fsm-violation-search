@@ -28,8 +28,8 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
       if (error) {
         console.log(error)
         result.crawlerStatus = false
-        result.msg = '訪問超時'
-        callBack(result)
+        result.msg = '查詢超時，請稍候重試。'
+        callBack(result, false)
         return
       }
       if (response.statusCode === 200 || response.statusCode === 302) {
@@ -99,7 +99,7 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
     if (statusCode === 200) {
       result.crawlerStatus = false
       result.msg = '輸入的車牌編號沒有登記'
-      callBack(result)
+      callBack(result, true)
     } else {
       let options = {
         url: page3,
@@ -167,7 +167,7 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
     if (statusCode === 200) {
       result.crawlerStatus = false
       result.msg = '輸入的車身編號 ' + vin + ' 不正確'
-      callBack(result)
+      callBack(result, true)
     } else {
       page5 += next
       let options = {
@@ -226,7 +226,7 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
         result.msg = '有違例紀錄'
       }
     }
-    callBack(result)
+    callBack(result, true)
   }
   step0()
 }
@@ -237,9 +237,9 @@ let jerkyExplorerApi = function (req, resp) {
     let plateNumber = query['plate_number']
     let vin = query['vin']
     let category = query['category']
-    jerkyExplorer(plateNumber, vin, category, function (data) {
+    jerkyExplorer(plateNumber, vin, category, function (data, status) {
       let response = JSON.stringify({
-        status: 'success',
+        status: status,
         result: data
       })
       resp.setHeader('Content-Type', 'application/json');

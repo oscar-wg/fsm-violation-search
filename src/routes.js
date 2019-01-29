@@ -1,6 +1,6 @@
 export const routes = [
   {
-    path: '/iJerky/index',
+    path: '/iJerky',
     name: 'search',
     page: 'Search.vue'
   },
@@ -11,11 +11,12 @@ export const routes = [
   },
   {
     path: '*',
-    redirect: '/iJerky/index'
+    redirect: '/iJerky'
   }
 ]
 export const mapRoutes = () => {
   const mappedRoutes = []
+
   routes.forEach(route => {
     if (!route.redirect && route.path !== '*') {
       mappedRoutes.push(route.path.replace('/:optional?/:sub?', ''))

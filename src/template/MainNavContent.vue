@@ -1,6 +1,6 @@
 <template>
   <div class="main-nav-content">
-    <router-link to="/iJerky/index">{{ $t('pages.search.title') }}</router-link>
+    <router-link to="/iJerky" exact>{{ $t('pages.search.title') }}</router-link>
     <router-link to="/iJerky/about">{{ $t('pages.about.title') }}</router-link>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
 
     a {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 2em;
       text-align: center;
 
@@ -55,7 +55,7 @@ export default {
     }
 
     .router-link-active, .router-link-active:hover {
-      font-weight: 500;
+      font-weight: bold;
       background: #ececec;
       color: #333;
     }

@@ -7,7 +7,7 @@
       <main-nav />
 
       <div class="main-container" v-if="loading">
-        <code-loading>Loading page...</code-loading>
+        <code-loading>全力載入中...</code-loading>
       </div>
 
       <router-view v-else />
