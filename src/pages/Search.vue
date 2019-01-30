@@ -74,10 +74,10 @@
 
             <md-card-content class="md-layout jerky-card-detail">
               <div class="jerky-card-date md-layout-item md-size-50"><span>檢控日期</span><br>{{ j.datetime.substring(0, 4) }} / {{ j.datetime.substring(5, 7) }} / {{ j.datetime.substring(8, 10) }}</div>
-              <div class="jerky-card-time md-layout-item md-size-25"><span>時間</span><br>{{ j.datetime.substring(11, 13) }} : {{ j.datetime.substring(14, 16) }}</div>
+              <div class="jerky-card-time md-layout-item md-size-25"><span>時間</span><br>{{ j.datetime.substring(11, 13) }}:{{ j.datetime.substring(14, 16) }}</div>
               <div class="jerky-card-fine md-layout-item md-size-25"><span>罰款</span><br>${{ j.fine }}</div>
               <div class="jerky-card-place md-layout-item md-size-100"><span>地點</span><br>{{ j.place }}</div>
-              <div class="jerky-card-clause md-layout-item md-size-100"><span>違法行為</span><br>{{ j.penalty_clause_detail }}</div>
+              <div class="jerky-card-clause md-layout-item md-size-100"><span>違規行為</span><br>{{ j.penalty_clause_detail }}</div>
             </md-card-content>
 
           </md-card>
