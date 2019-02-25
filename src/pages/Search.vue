@@ -59,7 +59,7 @@
           <md-snackbar :md-active.sync="result.notify">{{ result.msg }}</md-snackbar>
         </div>
       </form>
-      <div class="md-layout jerky-result">
+      <div class="md-layout jerky-result md-alignment-top-center">
         <template v-for="(j, index) in jerkys">
           <md-card :key="j.accusation_no" class="jerky-card md-primary md-layout-item md-size-30 md-medium-size-45 md-small-size-100">
             <md-card-header>
