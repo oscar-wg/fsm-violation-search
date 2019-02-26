@@ -81,7 +81,8 @@
             </md-card-content>
 
           </md-card>
-          <div :key="index" class="md-layout-item md-size-3 md-medium-size-5 md-small-hide"></div>
+          <div :key="index" v-if="(index % 3 < 2) && (index !== jerkys.length-1)" class="md-layout-item md-size-5 md-medium-hide"></div>
+          <div :key="index" v-if="(index % 2 < 1) && (index !== jerkys.length-1)" class="md-layout-item md-medium-size-5 md-small-hide"></div>
         </template>
       </div>
     </section>
