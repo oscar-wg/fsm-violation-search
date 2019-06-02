@@ -59,9 +59,9 @@
           <md-snackbar :md-active.sync="result.notify">{{ result.msg }}</md-snackbar>
         </div>
       </form>
-      <div class="md-layout jerky-result md-alignment-top-center">
-        <template v-for="(j, index) in jerkys">
-          <md-card :key="j.accusation_no" class="jerky-card md-primary md-layout-item md-size-30 md-medium-size-45 md-small-size-100">
+      <div class="md-layout md-gutter jerky-result md-alignment-top-center">
+        <div v-for="(j, index) in jerkys" :key="index" class="md-layout-item md-size-30 md-medium-size-45 md-small-size-100">
+          <md-card class="jerky-card md-primary">
             <md-card-header>
               <md-card-header-text>
                 <div class="md-title">交通違例通知</div>
@@ -71,7 +71,6 @@
                 <img :src="qrCodePath" alt="qrcode">
               </md-card-media>
             </md-card-header>
-
             <md-card-content class="md-layout jerky-card-detail">
               <div class="jerky-card-date md-layout-item md-size-50"><span>檢控日期</span><br>{{ j.datetime.substring(0, 4) }} / {{ j.datetime.substring(5, 7) }} / {{ j.datetime.substring(8, 10) }}</div>
               <div class="jerky-card-time md-layout-item md-size-25"><span>時間</span><br>{{ j.datetime.substring(11, 13) }}:{{ j.datetime.substring(14, 16) }}</div>
@@ -79,11 +78,8 @@
               <div class="jerky-card-place md-layout-item md-size-100"><span>地點</span><br>{{ j.place }}</div>
               <div class="jerky-card-clause md-layout-item md-size-100"><span>違規行為</span><br>{{ j.penalty_clause_detail }}</div>
             </md-card-content>
-
           </md-card>
-          <div :key="index" v-if="(index % 3 < 2) && (index !== jerkys.length-1)" class="md-layout-item md-size-5 md-medium-hide"></div>
-          <div :key="index" v-if="(index % 2 < 1) && (index !== jerkys.length-1)" class="md-layout-item md-medium-size-5 md-small-hide"></div>
-        </template>
+        </div>
       </div>
     </section>
   </page-container>
@@ -167,6 +163,7 @@ export default {
             vm.result.msg = response.data.result.msg
           } else {
             vm.jerkys = response.data.result.jerkys
+            console.log(vm.jerkys)
             if (vm.jerkys.length > 0) {
               vm.result.msg = '你有' + vm.jerkys.length + '張未繳費牛肉乾!'
             } else {
@@ -237,5 +234,11 @@ export default {
   }
   .jerky-card .jerky-card-detail > div > span {
     font-size: 12px;
+  }
+  @media (max-width: 1903px) {
+    .jerky-result.md-layout.md-gutter>.md-layout-item {
+      padding-right: 6px;
+      padding-left: 6px;
+    }
   }
 </style>

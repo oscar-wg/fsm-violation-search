@@ -4,7 +4,7 @@ let express = require('express')
 let app = express()
 
 let jerkyExplorer = function (plateNumber, vin, category, callBack) {
-  let timeout = 2000
+  let timeout = 10000
   let cookies = request.jar()
   let sessionCookie = ''
   let page1 = 'https://www.fsm.gov.mo/webticket/tq_c.aspx' // 汽機車目錄
@@ -24,6 +24,7 @@ let jerkyExplorer = function (plateNumber, vin, category, callBack) {
   }
   let reqCall = function (options, succ) {
     request.cookie(sessionCookie)
+    // console.log(options)
     request(options, function (error, response, body) {
       if (error) {
         console.log(error)
