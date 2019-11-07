@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://demo.kamfu.net/iJerky/" target="_blank">
+  <a href="http://demo.kfwong.tech/iJerky/" target="_blank">
     <img width="150" src="https://github.com/Oscar-Wg/fsm-violation-search/blob/master/static/ijerky_logo.png">
   </a>
 </p>
