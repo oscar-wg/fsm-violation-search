@@ -22,7 +22,7 @@
 
 ## Link
 
-<a href="http://demo.kamfu.net/iJerky/" target="_blank">iJerky</a>
+<a href="http://demo.kfwong.tech/iJerky/" target="_blank">iJerky</a>
 
 ## Installation and Usage
 
